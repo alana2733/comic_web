@@ -1,16 +1,60 @@
 .chapter-container {
-    margin-top: 20px;
-  }
-  
-  .chapter-title {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-  }
-  
-  .chapter-images img {
-    display: block;
-    margin-bottom: 10px;
-    max-width: 100%;
-    border-radius: 8px;
-  }
-  
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Căn giữa theo chiều ngang */
+  justify-content: center; /* Căn giữa theo chiều dọc */
+  min-height: 100vh; /* Đảm bảo chiều cao đủ để căn giữa toàn bộ màn hình */
+}
+
+.chapter-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  text-align: center; /* Căn giữa chữ */
+}
+
+.chapter-images {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Căn giữa các hình ảnh */
+  justify-content: center; /* Căn giữa các hình ảnh */
+  width: 100%;
+}
+
+.chapter-image {
+  background-color: #f0f0f0; /* Khung placeholder */
+  min-height: 200px; /* Chiều cao tối thiểu */
+  margin-bottom: 20px; /* Khoảng cách giữa các hình ảnh */
+}
+
+.chapter-images img {
+  max-width: 90%; /* Giới hạn kích thước ảnh tối đa */
+  border-radius: 8px;
+}
+
+.chapter-navigation {
+  display: flex;
+  justify-content: center; /* Căn giữa các nút */
+  gap: 10px; /* Khoảng cách giữa các nút */
+  margin-top: 20px;
+}
+
+.navigation-button {
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.navigation-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.navigation-button:hover:not(:disabled) {
+  background-color: #0056b3;
+}

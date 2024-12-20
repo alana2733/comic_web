@@ -3,6 +3,7 @@
   margin: auto;
   padding: 20px;
   font-family: Arial, sans-serif;
+  position: relative; /* Đảm bảo các khung bên ngoài được đặt đúng vị trí */
 }
 
 .infor-header {
@@ -23,37 +24,19 @@
   border-radius: 10px;
 }
 
-.infor-author-category {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  flex-grow: 1;  /* Tạo không gian cho phần tác giả, thể loại, mô tả */
-}
-
 .infor-author-category p {
   margin: 5px 0;
   font-size: 16px;
 }
 
-.read-comic-button {
-  background-color: #28a745;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-top: 10px;  /* Đảm bảo nút không bị dính vào mô tả */
-  border-radius: 5px;
-  max-width: 200px;  /* Giới hạn chiều rộng nút */
-  width: auto;  /* Để nút có kích thước tự nhiên */
-  align-self: flex-start;  /* Căn nút về phía trái trong cột */
-}
-
-.read-comic-button:hover {
-  background-color: #218838;
-}
-
 .infor-chapters {
+  margin-top: 20px;
+}
+
+.no-chapters-message {
+  text-align: center;
+  font-size: 1.2em;
+  color: #888;
   margin-top: 20px;
 }
 
@@ -83,4 +66,48 @@
 
 .infor-chapter-button:hover {
   background-color: #0056b3;
+}
+
+.read-comic-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.read-comic-button:hover {
+  background-color: #218838;
+}
+
+/* Các khung quảng cáo ở hai bên */
+.advertisement-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100px; /* Giảm chiều rộng */
+  background-color: #f8f9fa;
+  border: 2px solid #ccc;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 10px; /* Bo góc cho khung */
+  padding: 10px;
+  margin: 20px; /* Thêm khoảng cách từ viền màn hình */
+}
+
+.left-ad {
+  left: 0;
+}
+
+.right-ad {
+  right: 0;
 }

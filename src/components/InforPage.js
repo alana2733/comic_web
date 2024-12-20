@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import "./InforPage.css";
+import "./HomePage.css"; // Import CSS từ HomePage để sử dụng khung xanh
 
 const InforPage = () => {
   const { slug } = useParams();
@@ -47,7 +48,6 @@ const InforPage = () => {
     });
   };
 
-  // Thêm hàm để điều hướng đến chương 1
   const handleReadFirstChapter = () => {
     if (chapters.length > 0) {
       const firstChapter = chapters[0]; // Lấy chương 1
@@ -71,6 +71,17 @@ const InforPage = () => {
 
   return (
     <div className="infor-container">
+      {/* Khung xanh phía trên */}
+      <div
+        className="homepage-header"
+        onClick={() => navigate("/")}
+        style={{ cursor: "pointer" }}
+      >
+        <div className="homepage-logo" title="Nhấn để trở về trang đầu">
+          Tam Cô Nương
+        </div>
+      </div>
+
       <h1 className="infor-header">{comic.name}</h1>
       <div className="infor-details">
         <img
@@ -83,7 +94,6 @@ const InforPage = () => {
           <p><strong>Thể loại:</strong> {comic.category && comic.category.map((cat) => cat.name).join(", ")}</p>
           <p><strong>Mô tả:</strong> {removeHtmlTags(comic.content)}</p>
 
-          {/* Đặt nút "Đọc truyện" dưới phần mô tả */}
           {chapters.length > 0 && (
             <button
               className="read-comic-button"
@@ -95,20 +105,32 @@ const InforPage = () => {
         </div>
       </div>
 
-      <div className="infor-chapters">
-        <h2>Danh sách chương</h2>
-        <ul className="infor-chapter-list">
-          {chapters.map((chapter, index) => (
-            <li key={index} className="infor-chapter-item">
-              <button
-                onClick={() => handleChapterClick(chapter, index)}
-                className="infor-chapter-button"
-              >
-                Chương {chapter.chapter_name}
-              </button>
-            </li>
-          ))}
-        </ul>
+  <div className="infor-chapters">
+  <h2>Danh sách chương</h2>
+  {chapters.length > 0 ? (
+    <ul className="infor-chapter-list">
+      {chapters.map((chapter, index) => (
+        <li key={index} className="infor-chapter-item">
+          <button
+            onClick={() => handleChapterClick(chapter, index)}
+            className="infor-chapter-button"
+          >
+            Chương {chapter.chapter_name}
+          </button>
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <p className="no-chapters-message">Không có chương để hiển thị</p>
+  )}
+</div>
+
+
+      <div className="advertisement-container left-ad">
+        <p>Trống trải vì chưa được book quảng cáo :))</p>
+      </div>
+      <div className="advertisement-container right-ad">
+        <p>Trống trải vì chưa được book quảng cáo :))</p>
       </div>
     </div>
   );
