@@ -46,7 +46,20 @@ const InforPage = () => {
       },
     });
   };
-    
+
+  // Thêm hàm để điều hướng đến chương 1
+  const handleReadFirstChapter = () => {
+    if (chapters.length > 0) {
+      const firstChapter = chapters[0]; // Lấy chương 1
+      navigate(`/chapter/${firstChapter.chapter_name}`, {
+        state: {
+          chapters: chapters,
+          currentChapterIndex: 0, // Chỉ số chương 1 là 0
+          chapterApiUrl: firstChapter.chapter_api_data,
+        },
+      });
+    }
+  };
 
   if (loading) {
     return <div>Đang tải dữ liệu...</div>;
@@ -69,6 +82,16 @@ const InforPage = () => {
           <p><strong>Tác giả:</strong> {comic.author && comic.author.join(", ")}</p>
           <p><strong>Thể loại:</strong> {comic.category && comic.category.map((cat) => cat.name).join(", ")}</p>
           <p><strong>Mô tả:</strong> {removeHtmlTags(comic.content)}</p>
+
+          {/* Đặt nút "Đọc truyện" dưới phần mô tả */}
+          {chapters.length > 0 && (
+            <button
+              className="read-comic-button"
+              onClick={handleReadFirstChapter}
+            >
+              Đọc truyện
+            </button>
+          )}
         </div>
       </div>
 
@@ -91,4 +114,4 @@ const InforPage = () => {
   );
 };
 
-export default InforPage
+export default InforPage;
