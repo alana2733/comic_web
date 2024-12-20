@@ -58,3 +58,45 @@
 .navigation-button:hover:not(:disabled) {
   background-color: #0056b3;
 }
+
+/* Khung quảng cáo */
+.advertisement-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  background-color: #f8f9fa;
+  border: 2px solid #ccc;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 20px;
+}
+
+.left-ad {
+  left: 0;
+}
+
+.right-ad {
+  right: 0;
+}
+
+/* Thanh màu xanh biển chỉ áp dụng cho trang ChapterImg */
+.chapter-img-header {
+  width: 75%; /* Chiều rộng riêng biệt cho khung xanh trong trang ChapterImg */
+  background-color: #007bff; /* Màu xanh biển */
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  z-index: 1;
+  height: 60px; /* Chiều cao của header trong ChapterImg */
+}
