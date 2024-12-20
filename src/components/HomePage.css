@@ -84,3 +84,33 @@
   background-color: #ff7f00; /* Màu nổi bật cho trang hiện tại */
   color: white;
 }
+
+/* Thanh màu xanh biển */
+.homepage-header {
+  width: 100%;
+  background-color: #007bff; /* Màu xanh biển */
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.homepage-logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.search-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.search-input {
+  width: 80%;
+  max-width: 400px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
