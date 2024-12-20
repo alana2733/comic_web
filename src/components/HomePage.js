@@ -32,7 +32,7 @@ const HomePage = () => {
       setSearchResults(results); 
 
       const totalCount = response.data.data?.totalCount || 0;
-      setTotalPages(Math.ceil(totalCount / 30)); // Cập nhật số trang nếu có kết quả
+      setTotalPages(Math.ceil(totalCount / 30));
 
     } catch (err) {
       console.error("Error fetching search results:", err);
@@ -101,7 +101,7 @@ const HomePage = () => {
   return (
     <div className="homepage-container">
       <div className="homepage-header" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
-        <div className="homepage-logo" title="Nhấn để trở về trang đầu">Tam Cô Nương</div>
+        <div className="homepage-logo" title="Nhấn để trở về trang đầu">Comic HEHE</div>
       </div>
 
       <h1 className="homepage-title">Danh sách truyện tranh</h1>

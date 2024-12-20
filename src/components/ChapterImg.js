@@ -74,8 +74,21 @@ const ChapterImg = () => {
           Tam Cô Nương
         </div>
       </div>
-
+  
+      {/* Tiêu đề chương */}
       <h2 className="chapter-title">Chương {chapterName}</h2>
+  
+      {/* Điều hướng chương dưới tiêu đề */}
+      <div className="chapter-navigation-top">
+        <button onClick={handlePreviousChapter} disabled={state && (!state.chapters || state.currentChapterIndex === 0)} className="navigation-button">
+          Chương trước
+        </button>
+        <button onClick={handleNextChapter} disabled={state && (!state.chapters || state.currentChapterIndex === state.chapters.length - 1)} className="navigation-button">
+          Chương sau
+        </button>
+      </div>
+  
+      {/* Các hình ảnh chương */}
       <div className="chapter-images">
         {images.length > 0 ? (
           images.map((image, index) => (
@@ -91,8 +104,8 @@ const ChapterImg = () => {
           <div>Không có hình ảnh để hiển thị.</div>
         )}
       </div>
-
-      {/* Điều hướng các chương */}
+  
+      {/* Điều hướng chương ở cuối trang */}
       <div className="chapter-navigation">
         <button onClick={handlePreviousChapter} disabled={state && (!state.chapters || state.currentChapterIndex === 0)} className="navigation-button">
           Chương trước
@@ -101,7 +114,7 @@ const ChapterImg = () => {
           Chương sau
         </button>
       </div>
-
+  
       {/* Quảng cáo */}
       <div className="advertisement-container left-ad">
         <p>Trống trải vì chưa được book quảng cáo :))</p>
@@ -110,7 +123,7 @@ const ChapterImg = () => {
         <p>Trống trải vì chưa được book quảng cáo :))</p>
       </div>
     </div>
-  );
+  );    
 };
 
 export default ChapterImg;

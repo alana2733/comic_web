@@ -13,12 +13,21 @@
   text-align: center; /* Căn giữa chữ */
 }
 
+.chapter-navigation {
+  display: flex;
+  justify-content: center; /* Căn giữa các nút */
+  gap: 20px; /* Tăng khoảng cách giữa các nút */
+  margin-top: 20px; /* Khoảng cách phía trên */
+  margin-bottom: 25px; /* Khoảng cách phía dưới */
+}
+
 .chapter-images {
   display: flex;
   flex-direction: column;
   align-items: center; /* Căn giữa các hình ảnh */
   justify-content: center; /* Căn giữa các hình ảnh */
   width: 100%;
+  margin-top: 25px; /* Khoảng cách từ hình ảnh đến các nút Chương trước, Chương sau */
 }
 
 .chapter-image {
@@ -28,15 +37,9 @@
 }
 
 .chapter-images img {
-  max-width: 90%; /* Giới hạn kích thước ảnh tối đa */
+  width: 75%; /* Đảm bảo phần chứa ảnh chiếm toàn bộ chiều rộng */
+  max-width: 100%; /* Giới hạn kích thước ảnh tối đa */
   border-radius: 8px;
-}
-
-.chapter-navigation {
-  display: flex;
-  justify-content: center; /* Căn giữa các nút */
-  gap: 10px; /* Khoảng cách giữa các nút */
-  margin-top: 20px;
 }
 
 .navigation-button {
@@ -48,6 +51,7 @@
   color: white;
   cursor: pointer;
   transition: background-color 0.3s;
+  margin: 0 5px; /* Tăng khoảng cách giữa các nút */
 }
 
 .navigation-button:disabled {
@@ -56,6 +60,34 @@
 }
 
 .navigation-button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+/* Điều hướng chương ở dưới title */
+.chapter-navigation-title {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Tăng khoảng cách giữa các nút ở trên tiêu đề */
+  margin-top: 10px; /* Khoảng cách từ trên cùng */
+}
+
+.chapter-navigation-title .navigation-button {
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.chapter-navigation-title .navigation-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.chapter-navigation-title .navigation-button:hover:not(:disabled) {
   background-color: #0056b3;
 }
 
